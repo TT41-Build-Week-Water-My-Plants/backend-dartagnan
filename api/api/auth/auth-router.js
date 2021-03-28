@@ -33,7 +33,7 @@ router.post("/register", checkUsernameAvailable, (req, res, next) => {
 });
 
 router.post("/login", checkUsernameExists, (req, res, next) => {
-  if (!req.body.username || !req.body.password || !req.body.phone_number) {
+  if (!req.body.username || !req.body.password) {
     res.status(400).json({ message: "all fields are required" });
   } else {
     const { username, password } = req.body;
