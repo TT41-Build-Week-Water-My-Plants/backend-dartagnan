@@ -7,7 +7,7 @@ router.get("/:id", restricted, (req, res) => {
     .then((user) => {
       res.status(200).json(user);
     })
-    .catch((err) => {
+    .catch(() => {
       res.status(500).json({ message: "something wrong in the router" });
     });
 });

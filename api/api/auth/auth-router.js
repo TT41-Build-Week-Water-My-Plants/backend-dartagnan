@@ -67,8 +67,6 @@ function buildToken(user) {
 router.use((err, req, res, next) /*eslint-disable-line*/ => {
   res.status(500).json({
     message: "Something went wrong in the router",
-    err: err.message,
-    stack: err.stack,
   });
 });
 
