@@ -13,7 +13,7 @@ router.get("/:id", restricted, (req, res) => {
     });
 });
 
-router.put("/:id", (req, res, next) => {
+router.put("/:id", restricted, (req, res, next) => {
   const credentials = req.body;
 
   if (!credentials.password || !credentials.phone_number) {
