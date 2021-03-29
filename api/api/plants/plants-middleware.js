@@ -1,4 +1,3 @@
-const { rawListeners } = require("../../server");
 const { getPlantById } = require("./plants-model");
 
 const checkPlantId = async (req, res, next) => {

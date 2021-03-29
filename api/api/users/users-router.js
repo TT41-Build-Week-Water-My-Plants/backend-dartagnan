@@ -2,8 +2,9 @@ const router = require("express").Router();
 const restricted = require("../restricted");
 const Users = require("../auth/auth-model");
 const bcrypt = require("bcryptjs");
+const { checkUserId } = require("./users-middleware");
 
-router.get("/:id", restricted, (req, res) => {
+router.get("/:id", restricted, checkUserId, (req, res) => {
   Users.findById(req.params.id)
     .then((user) => {
       res.status(200).json(user);
@@ -13,7 +14,7 @@ router.get("/:id", restricted, (req, res) => {
     });
 });
 
-router.put("/:id", restricted, (req, res, next) => {
+router.put("/:id", restricted, checkUserId, (req, res, next) => {
   const credentials = req.body;
 
   if (!credentials.password || !credentials.phone_number) {
