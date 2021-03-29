@@ -17,6 +17,12 @@ function add(user) {
   ]);
 }
 
+function updateUser(id, user) {
+  return db("users")
+    .where("user_id", id)
+    .update(user, ["user_id", "username", "password", "phone_number"]);
+}
+
 function findById(id) {
   return db("users")
     .select("user_id", "username", "password", "phone_number")
@@ -29,4 +35,5 @@ module.exports = {
   find,
   findById,
   findByUsername,
+  updateUser,
 };
