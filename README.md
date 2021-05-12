@@ -1,5 +1,7 @@
 # Plants API
 
+A guide to the API for Water My Plants
+
 ### BASE URL: https://plants-buildweek41.herokuapp.com
 
 # ENDPOINTS:
